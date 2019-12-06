@@ -1,4 +1,4 @@
-# part one
+# part one + part two
 valid = []
 okay = True
 for i in range(265275, 781584):
@@ -14,10 +14,11 @@ for p in range(0, 5):
         okay = False
         for y in range(0, 5):
             if int(str(x)[y]) == int(str(x)[y+1]):
-                okay = True
-            if okay:
-                break
+                temp = int(str(x)[y])
+                if str(temp)*2 in str(x) and str(temp)*3 not in str(x):
+                    okay = True
         if not okay:
             valid.remove(x)
 print(valid)
 print(len(valid))
+

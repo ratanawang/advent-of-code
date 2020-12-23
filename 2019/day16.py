@@ -1,11 +1,13 @@
-# part one
+# part one and part two
 
 # take in input, convert to a list of nums
-input_signal = list(input("Enter the list of numbers: "))
+input_signal = (list(input("Enter the list of numbers: ")))
 new_input = []
 pos = 0
 base = ["0", "1", "0", "-1"]
 count = 0
+offset = int("".join(input_signal[0:7]))
+answer = []
 
 
 # base pattern: 0, 1, 0, -1
@@ -46,5 +48,9 @@ while count < 100:
         pos += 1
     print(new_input)
     input_signal = [x for x in new_input]
+    answer = [x for x in new_input]
     new_input.clear()
     count += 1
+
+print(answer)
+print(answer[offset:offset + 8])
